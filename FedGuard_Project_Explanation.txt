@@ -1,0 +1,294 @@
+==========================================================================
+            FedGuard-IoT  -  PROJECT EXPLANATION (SIMPLE WORDS)
+==========================================================================
+
+Full title:
+  FedGuard-IoT: A Privacy-Preserving Federated Deep Learning Framework
+  for Explainable Intrusion Detection in IoT / IIoT Networks
+
+
+--------------------------------------------------------------------------
+1. THE STORY BEHIND THE PROJECT
+--------------------------------------------------------------------------
+
+Picture 5 factories. Each one has many smart machines, like temperature
+sensors, cameras and controllers, all connected to the internet.
+These are called IoT devices. In factories they are also called IIoT
+(Industrial IoT).
+
+Hackers attack these machines. For example, they might:
+  - send millions of fake messages so the machine crashes   -> DDoS
+  - guess passwords                                         -> Password cracking
+  - lock all the files and demand money                     -> Ransomware
+  - check which "doors" (ports) are open before attacking   -> Port scanning
+
+Each factory needs a SECURITY GUARD PROGRAM that watches the network
+traffic and shouts "ATTACK!" when it sees something bad.
+This guard is called an IDS (Intrusion Detection System).
+
+
+--------------------------------------------------------------------------
+2. THE PROBLEM
+--------------------------------------------------------------------------
+
+To make a smart guard, we train an AI model on lots of examples of
+normal traffic and attack traffic.
+
+The normal way to do that:
+  All 5 factories send their network data to ONE central server,
+  and the AI learns there.
+
+Why that is bad:
+  [X] Factory data is SECRET, and the factories don't want to share it.
+  [X] Sending huge amounts of data is SLOW and COSTLY.
+  [X] Each factory sees DIFFERENT attacks, so the data doesn't match well.
+  [X] The AI just says "attack" and NEVER SAYS WHY, so the security
+      staff can't trust it.
+
+
+--------------------------------------------------------------------------
+3. OUR SOLUTION: FedGuard-IoT
+--------------------------------------------------------------------------
+
+MAIN IDEA: Don't send the data. Send only what was learned.
+
+EXAMPLE:
+  5 students are each studying at home from their own private notes.
+  They don't share the notes. Each one writes only a short SUMMARY of
+  what they learned and gives it to the teacher. The teacher COMBINES
+  all the summaries into one good master guide and gives it back to
+  every student. They repeat this several times.
+  In the end, every student knows what all 5 learned, but nobody
+  saw anyone else's private notes.
+
+In our project:
+  Students       = factories (edge clients)
+  Private notes  = network traffic data
+  Summary        = model weights (numbers the AI learned)
+  Teacher        = aggregation server
+  Master guide   = global model
+
+This method is called FEDERATED LEARNING.
+
+On top of that, we add 3 things:
+
+  (a) FedProx
+      Each factory sees different attacks. FedProx stops any one
+      factory's AI from drifting too far from the group, so the
+      combining works better.
+
+  (b) Differential Privacy (DP)
+      Before sending its summary, each factory adds a little RANDOM
+      NOISE. Then nobody can work backwards from the numbers to the
+      real secret data.
+
+  (c) Explainability (SHAP)
+      When the AI says "ATTACK", it also says WHY.
+      Example: "Port Scanning, because many different ports were
+      contacted."
+
+IN ONE LINE:
+  FedGuard-IoT detects cyber-attacks on IoT/factory networks using AI.
+  Factories train together without sharing their private data, and
+  every alert comes with an explanation.
+
+
+--------------------------------------------------------------------------
+4. THE BASE PAPER
+--------------------------------------------------------------------------
+
+  Title   : Edge-IIoTset: A New Comprehensive Realistic Cyber Security
+            Dataset of IoT and IIoT Applications for Centralized and
+            Federated Learning
+  Authors : M. A. Ferrag, O. Friha, D. Hamouda, L. Maglaras, H. Janicke
+  Journal : IEEE Access, Vol. 10, 2022, pp. 40281-40306
+  DOI     : 10.1109/ACCESS.2022.3165809
+
+What the base paper did:
+  1. Built a TEST LAB with real IoT devices (sensors, Modbus, MQTT and so on).
+  2. ATTACKED the lab with 14 types of attacks and recorded all the traffic.
+  3. Released this as a free dataset called Edge-IIoTset
+     (on Kaggle and IEEE DataPort).
+  4. Tested AI models on it in two ways: centralized and simple
+     federated learning (FedAvg).
+
+The 14 attacks, in 5 groups:
+  - DoS/DDoS              : TCP SYN, UDP, HTTP, ICMP
+  - Information gathering : Port scanning, OS fingerprinting,
+                            Vulnerability scanning
+  - Man-in-the-middle     : MITM (ARP / DNS spoofing)
+  - Injection             : XSS, SQL injection, Uploading
+  - Malware               : Backdoor, Password cracking, Ransomware
+
+Add NORMAL traffic and you get 15 classes in total.
+
+
+--------------------------------------------------------------------------
+5. BASE PAPER vs. OUR PROJECT
+--------------------------------------------------------------------------
+
+  Point               | Base paper            | Our project (FedGuard-IoT)
+  --------------------+-----------------------+------------------------------
+  Dataset             | Created Edge-IIoTset  | USES Edge-IIoTset
+  Federated learning  | Basic FedAvg          | FedProx (handles factories
+                      |                       | with different data)
+  Privacy protection  | No extra noise        | Differential Privacy noise
+  Explains alerts?    | NO                    | YES, using SHAP
+  Dashboard           | NO                    | YES, a security dashboard
+
+WHAT TO SAY IN THE REVIEW:
+  "The base paper gave the dataset and a basic federated model.
+   We improve it by handling different data at each site (FedProx),
+   adding privacy noise (Differential Privacy), and explaining every
+   alert (SHAP), shown on a dashboard."
+
+
+--------------------------------------------------------------------------
+6. WHAT THE DEMO CODE DOES, STEP BY STEP
+--------------------------------------------------------------------------
+
+The folder FedGuard_Demo has 2 programs.
+
+=== PROGRAM 1: fedguard.py  (the brain) ===
+
+STEP 1 - Make data
+  It creates 10,000 fake network-traffic records. Each record has 20
+  measurements, like tcp.flags.syn (connection requests) and
+  login.failed_attempts (wrong passwords). Each record is labeled
+  Normal or one of the 14 attacks.
+  (This is fake practice data. The real project will use the real
+   Edge-IIoTset file.)
+
+STEP 2 - Clean the data
+  All values are scaled to between 0 and 1, so no measurement
+  dominates just because its numbers are bigger.
+
+STEP 3 - Split it across 5 factories
+  The data is divided so that EACH FACTORY SEES DIFFERENT ATTACKS.
+  For example, Factory 4 sees only 5 of the 15 types.
+  This copies real life. (This is called "non-IID" data.)
+
+STEP 4 - Train in 4 different ways and compare
+  1. Centralized  : all data on one server. Best accuracy, but
+                    NO PRIVACY. This is the comparison point.
+  2. FedAvg       : federated learning, the base paper's method.
+  3. FedProx      : our improved federated method.
+  4. FedProx + DP : our full method with privacy noise.
+
+  Federated training repeats for 30 rounds:
+     Each factory trains on its own data
+       -> factory sends only the learned numbers (+ noise if DP is on)
+       -> server averages everyone's numbers
+       -> server sends the new global model back to every factory
+
+STEP 5 - Test
+  It checks each model on 2,000 records the AI has never seen:
+
+     Setting                     Accuracy   Macro F1
+     Centralized (no privacy)     0.933      0.940
+     FedAvg                       0.894      0.902
+     FedProx                      0.891      0.899
+     FedProx + DP                 0.904      0.912
+
+  MEANING: with federated learning, the AI got nearly the same
+  accuracy as centralized training, WITHOUT the factories sharing
+  their data.
+
+STEP 6 - Explain alerts
+  For each detected attack, it removes one measurement at a time and
+  checks how much the AI's confidence drops. The measurements that
+  matter most are the REASONS:
+     ALERT Port_Scanning  because of: tcp.dstport.unique, tcp.connection.rst
+     ALERT XSS            because of: http.uri.special_chars, http.request.len
+
+STEP 7 - Save results
+  results.png       -> charts
+  results.json      -> numbers
+  global_model.npz  -> the trained AI
+
+
+=== PROGRAM 2: dashboard.py  (the screen) ===
+
+This is a web page for the security team. You open it in a browser and:
+  - Click "Capture random network flow".
+  - It shows "Normal traffic" or "ALERT: Ransomware", with a
+    confidence level.
+  - It shows bars for the TOP 5 REASONS behind the decision.
+  - It also shows the results table and charts.
+
+
+--------------------------------------------------------------------------
+7. HOW TO RUN IT FOR YOUR DEMO
+--------------------------------------------------------------------------
+
+Open a terminal (Command Prompt) and type:
+
+   cd C:\Users\jothiselvi\Desktop\envoy\FedGuard_Demo
+   python fedguard.py
+   python dashboard.py
+
+Then open  http://127.0.0.1:5000  in Chrome and click the button.
+
+(Needs Python with numpy, matplotlib and flask. They are already
+ installed on this computer.)
+
+
+--------------------------------------------------------------------------
+8. READING THE CHART (results.png)
+--------------------------------------------------------------------------
+
+LEFT CHART:
+  - The blue line (centralized) learns fast.
+  - The orange and green lines (federated) start low and catch up
+    after about 30 rounds.
+  - The red line (with privacy noise) learns MORE SLOWLY, because
+    privacy costs some speed.
+
+RIGHT CHART:
+  - Each bar is one factory.
+  - The different colours show that every factory has a different
+    mix of attacks. That is the non-IID problem.
+
+
+--------------------------------------------------------------------------
+9. IF THE EXAMINER ASKS "IS THIS THE FINAL RESULT?"
+--------------------------------------------------------------------------
+
+Answer honestly:
+  "This is a working demo on sample data to show the full pipeline.
+   In Phase II, I will run it on the real Edge-IIoTset dataset with
+   PyTorch, Flower, Opacus and SHAP to get the final results."
+
+Demo simplifications vs. the full project:
+  - Data is synthetic (fake), not the real Edge-IIoTset file.
+  - Model is a small NumPy neural network (full project: PyTorch 1D-CNN).
+  - Federation is simulated in one program (full project: Flower).
+  - DP adds noise but does not calculate the privacy budget epsilon
+    (full project: Opacus).
+  - Explanation uses an approximation of SHAP (full project: shap library).
+  - In this demo, FedProx scored about the same as FedAvg, and the DP
+    model's slightly higher score is luck on easy data, not a real result.
+
+
+--------------------------------------------------------------------------
+10. KEY WORDS - QUICK MEANINGS
+--------------------------------------------------------------------------
+
+  IoT / IIoT        : Internet-connected devices / in industries
+  IDS               : Intrusion Detection System - the "security guard" AI
+  Federated Learning: Train together without sharing raw data
+  Edge client       : One factory/site that trains locally
+  Aggregation server: The "teacher" that combines everyone's learning
+  Global model      : The final combined AI sent back to everyone
+  FedAvg            : Simple averaging of everyone's learning
+  FedProx           : Improved averaging for sites with different data
+  Non-IID           : Each site has a different kind/mix of data
+  Differential
+    Privacy (DP)    : Adding small noise so secrets can't be recovered
+  SHAP              : Method that tells WHICH features caused a decision
+  Accuracy          : % of records the AI labeled correctly
+  Macro F1          : Score that treats every attack type equally
+                      (fair even for rare attacks)
+  Edge-IIoTset      : The public dataset from the base paper
+
+==========================================================================

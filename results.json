@@ -1,0 +1,986 @@
+{
+  "histories": {
+    "Centralized (no privacy)": [
+      {
+        "accuracy": 0.305,
+        "macro_f1": 0.07524133549244727
+      },
+      {
+        "accuracy": 0.6,
+        "macro_f1": 0.5787665456258355
+      },
+      {
+        "accuracy": 0.8085,
+        "macro_f1": 0.8237385539937542
+      },
+      {
+        "accuracy": 0.8775,
+        "macro_f1": 0.889437833353987
+      },
+      {
+        "accuracy": 0.8975,
+        "macro_f1": 0.909228888778186
+      },
+      {
+        "accuracy": 0.9105,
+        "macro_f1": 0.9208076485009954
+      },
+      {
+        "accuracy": 0.903,
+        "macro_f1": 0.9131736351496331
+      },
+      {
+        "accuracy": 0.913,
+        "macro_f1": 0.9193981244170216
+      },
+      {
+        "accuracy": 0.9095,
+        "macro_f1": 0.9184829836730309
+      },
+      {
+        "accuracy": 0.921,
+        "macro_f1": 0.9300723837260209
+      },
+      {
+        "accuracy": 0.9215,
+        "macro_f1": 0.9292540081150957
+      },
+      {
+        "accuracy": 0.918,
+        "macro_f1": 0.9254920179933229
+      },
+      {
+        "accuracy": 0.923,
+        "macro_f1": 0.9318664239005238
+      },
+      {
+        "accuracy": 0.926,
+        "macro_f1": 0.933656841073281
+      },
+      {
+        "accuracy": 0.927,
+        "macro_f1": 0.9343128676878838
+      },
+      {
+        "accuracy": 0.925,
+        "macro_f1": 0.932351518926271
+      },
+      {
+        "accuracy": 0.922,
+        "macro_f1": 0.9284152250975157
+      },
+      {
+        "accuracy": 0.915,
+        "macro_f1": 0.9234234910012471
+      },
+      {
+        "accuracy": 0.93,
+        "macro_f1": 0.9362546652595871
+      },
+      {
+        "accuracy": 0.9225,
+        "macro_f1": 0.930206765789763
+      },
+      {
+        "accuracy": 0.927,
+        "macro_f1": 0.9353506935588796
+      },
+      {
+        "accuracy": 0.9245,
+        "macro_f1": 0.932185935312264
+      },
+      {
+        "accuracy": 0.931,
+        "macro_f1": 0.9385972143343791
+      },
+      {
+        "accuracy": 0.923,
+        "macro_f1": 0.931367772469135
+      },
+      {
+        "accuracy": 0.9285,
+        "macro_f1": 0.9364785038169697
+      },
+      {
+        "accuracy": 0.927,
+        "macro_f1": 0.933957454359357
+      },
+      {
+        "accuracy": 0.928,
+        "macro_f1": 0.9350343740070659
+      },
+      {
+        "accuracy": 0.9195,
+        "macro_f1": 0.9303725079567969
+      },
+      {
+        "accuracy": 0.929,
+        "macro_f1": 0.9350085061742731
+      },
+      {
+        "accuracy": 0.9335,
+        "macro_f1": 0.9401447631443047
+      }
+    ],
+    "FedAvg": [
+      {
+        "accuracy": 0.287,
+        "macro_f1": 0.029744785593988857
+      },
+      {
+        "accuracy": 0.3555,
+        "macro_f1": 0.16074124397577333
+      },
+      {
+        "accuracy": 0.446,
+        "macro_f1": 0.2870563188985482
+      },
+      {
+        "accuracy": 0.506,
+        "macro_f1": 0.3744550868432948
+      },
+      {
+        "accuracy": 0.593,
+        "macro_f1": 0.47683744076320617
+      },
+      {
+        "accuracy": 0.5825,
+        "macro_f1": 0.47531031619125097
+      },
+      {
+        "accuracy": 0.6145,
+        "macro_f1": 0.5307787750273614
+      },
+      {
+        "accuracy": 0.6735,
+        "macro_f1": 0.6112940365874152
+      },
+      {
+        "accuracy": 0.6725,
+        "macro_f1": 0.6198291980056415
+      },
+      {
+        "accuracy": 0.745,
+        "macro_f1": 0.7192599994835459
+      },
+      {
+        "accuracy": 0.7285,
+        "macro_f1": 0.7024694454152304
+      },
+      {
+        "accuracy": 0.7935,
+        "macro_f1": 0.7888103911847099
+      },
+      {
+        "accuracy": 0.7715,
+        "macro_f1": 0.764659226176078
+      },
+      {
+        "accuracy": 0.814,
+        "macro_f1": 0.8155013416622926
+      },
+      {
+        "accuracy": 0.8165,
+        "macro_f1": 0.8184653618923587
+      },
+      {
+        "accuracy": 0.856,
+        "macro_f1": 0.8602444886261463
+      },
+      {
+        "accuracy": 0.8785,
+        "macro_f1": 0.8869437970392134
+      },
+      {
+        "accuracy": 0.862,
+        "macro_f1": 0.8679707896754876
+      },
+      {
+        "accuracy": 0.853,
+        "macro_f1": 0.8620326777355213
+      },
+      {
+        "accuracy": 0.89,
+        "macro_f1": 0.8970664729234855
+      },
+      {
+        "accuracy": 0.874,
+        "macro_f1": 0.8816125097240618
+      },
+      {
+        "accuracy": 0.8885,
+        "macro_f1": 0.8972230402178876
+      },
+      {
+        "accuracy": 0.8795,
+        "macro_f1": 0.8878437979037886
+      },
+      {
+        "accuracy": 0.885,
+        "macro_f1": 0.894139115251638
+      },
+      {
+        "accuracy": 0.8795,
+        "macro_f1": 0.8894752689569233
+      },
+      {
+        "accuracy": 0.905,
+        "macro_f1": 0.9129453155768203
+      },
+      {
+        "accuracy": 0.909,
+        "macro_f1": 0.916334956002053
+      },
+      {
+        "accuracy": 0.898,
+        "macro_f1": 0.9067549636259131
+      },
+      {
+        "accuracy": 0.9175,
+        "macro_f1": 0.9235601268544072
+      },
+      {
+        "accuracy": 0.894,
+        "macro_f1": 0.9017705844721251
+      }
+    ],
+    "FedProx": [
+      {
+        "accuracy": 0.287,
+        "macro_f1": 0.029744785593988857
+      },
+      {
+        "accuracy": 0.3415,
+        "macro_f1": 0.1379372852940948
+      },
+      {
+        "accuracy": 0.4335,
+        "macro_f1": 0.270651655501757
+      },
+      {
+        "accuracy": 0.487,
+        "macro_f1": 0.3493298841891581
+      },
+      {
+        "accuracy": 0.5755,
+        "macro_f1": 0.45713170425002064
+      },
+      {
+        "accuracy": 0.568,
+        "macro_f1": 0.45527217782377993
+      },
+      {
+        "accuracy": 0.6035,
+        "macro_f1": 0.5145059440336065
+      },
+      {
+        "accuracy": 0.656,
+        "macro_f1": 0.5861209557448669
+      },
+      {
+        "accuracy": 0.654,
+        "macro_f1": 0.5938656141937056
+      },
+      {
+        "accuracy": 0.732,
+        "macro_f1": 0.7011325775916568
+      },
+      {
+        "accuracy": 0.713,
+        "macro_f1": 0.6841607728795153
+      },
+      {
+        "accuracy": 0.783,
+        "macro_f1": 0.7754112997731857
+      },
+      {
+        "accuracy": 0.7565,
+        "macro_f1": 0.7457570295990761
+      },
+      {
+        "accuracy": 0.804,
+        "macro_f1": 0.8047882100295066
+      },
+      {
+        "accuracy": 0.8125,
+        "macro_f1": 0.8140810960118622
+      },
+      {
+        "accuracy": 0.8515,
+        "macro_f1": 0.8552817779843135
+      },
+      {
+        "accuracy": 0.871,
+        "macro_f1": 0.8785517212797374
+      },
+      {
+        "accuracy": 0.8555,
+        "macro_f1": 0.861822928356719
+      },
+      {
+        "accuracy": 0.847,
+        "macro_f1": 0.8557994138444472
+      },
+      {
+        "accuracy": 0.8885,
+        "macro_f1": 0.8957043382195711
+      },
+      {
+        "accuracy": 0.8715,
+        "macro_f1": 0.878984711929227
+      },
+      {
+        "accuracy": 0.8885,
+        "macro_f1": 0.8972038997755242
+      },
+      {
+        "accuracy": 0.875,
+        "macro_f1": 0.8834971244145946
+      },
+      {
+        "accuracy": 0.884,
+        "macro_f1": 0.8924457919598988
+      },
+      {
+        "accuracy": 0.876,
+        "macro_f1": 0.8855859999359263
+      },
+      {
+        "accuracy": 0.903,
+        "macro_f1": 0.9109596184728124
+      },
+      {
+        "accuracy": 0.9045,
+        "macro_f1": 0.9121279608160541
+      },
+      {
+        "accuracy": 0.897,
+        "macro_f1": 0.9058125526913448
+      },
+      {
+        "accuracy": 0.916,
+        "macro_f1": 0.9221934745019349
+      },
+      {
+        "accuracy": 0.891,
+        "macro_f1": 0.8988722049332838
+      }
+    ],
+    "FedProx + DP": [
+      {
+        "accuracy": 0.066,
+        "macro_f1": 0.027956987717375825
+      },
+      {
+        "accuracy": 0.1795,
+        "macro_f1": 0.05885981387434655
+      },
+      {
+        "accuracy": 0.315,
+        "macro_f1": 0.08977964107335604
+      },
+      {
+        "accuracy": 0.333,
+        "macro_f1": 0.13044826394225634
+      },
+      {
+        "accuracy": 0.353,
+        "macro_f1": 0.16432237781158865
+      },
+      {
+        "accuracy": 0.3745,
+        "macro_f1": 0.20282619062696952
+      },
+      {
+        "accuracy": 0.431,
+        "macro_f1": 0.27473618000856975
+      },
+      {
+        "accuracy": 0.479,
+        "macro_f1": 0.3369995008433051
+      },
+      {
+        "accuracy": 0.5265,
+        "macro_f1": 0.3956220889662978
+      },
+      {
+        "accuracy": 0.5295,
+        "macro_f1": 0.397444523472331
+      },
+      {
+        "accuracy": 0.5475,
+        "macro_f1": 0.4224480735954232
+      },
+      {
+        "accuracy": 0.5695,
+        "macro_f1": 0.45755215193104093
+      },
+      {
+        "accuracy": 0.5525,
+        "macro_f1": 0.44448703757047225
+      },
+      {
+        "accuracy": 0.6075,
+        "macro_f1": 0.5210155461580751
+      },
+      {
+        "accuracy": 0.62,
+        "macro_f1": 0.5374462005919579
+      },
+      {
+        "accuracy": 0.6515,
+        "macro_f1": 0.5839221033992332
+      },
+      {
+        "accuracy": 0.695,
+        "macro_f1": 0.6482716912783638
+      },
+      {
+        "accuracy": 0.7105,
+        "macro_f1": 0.6732589959625774
+      },
+      {
+        "accuracy": 0.736,
+        "macro_f1": 0.7118935882075663
+      },
+      {
+        "accuracy": 0.714,
+        "macro_f1": 0.6859102926155533
+      },
+      {
+        "accuracy": 0.812,
+        "macro_f1": 0.8086245122918491
+      },
+      {
+        "accuracy": 0.805,
+        "macro_f1": 0.8023223970033514
+      },
+      {
+        "accuracy": 0.799,
+        "macro_f1": 0.7975127034399929
+      },
+      {
+        "accuracy": 0.856,
+        "macro_f1": 0.8633702818866749
+      },
+      {
+        "accuracy": 0.8505,
+        "macro_f1": 0.8600159980953538
+      },
+      {
+        "accuracy": 0.8565,
+        "macro_f1": 0.8650202635221367
+      },
+      {
+        "accuracy": 0.8555,
+        "macro_f1": 0.8650147335395506
+      },
+      {
+        "accuracy": 0.868,
+        "macro_f1": 0.8775980245775933
+      },
+      {
+        "accuracy": 0.85,
+        "macro_f1": 0.8607091575501918
+      },
+      {
+        "accuracy": 0.904,
+        "macro_f1": 0.9121383272096963
+      }
+    ]
+  },
+  "client_counts": [
+    [
+      1,
+      28,
+      0,
+      92,
+      121,
+      15,
+      0,
+      43,
+      125,
+      5,
+      6,
+      71,
+      0,
+      34,
+      10
+    ],
+    [
+      139,
+      310,
+      274,
+      21,
+      91,
+      0,
+      336,
+      138,
+      83,
+      5,
+      9,
+      177,
+      105,
+      36,
+      0
+    ],
+    [
+      2050,
+      50,
+      80,
+      77,
+      10,
+      65,
+      12,
+      20,
+      0,
+      344,
+      381,
+      76,
+      37,
+      123,
+      13
+    ],
+    [
+      121,
+      1,
+      15,
+      39,
+      2,
+      6,
+      7,
+      200,
+      70,
+      20,
+      0,
+      18,
+      242,
+      0,
+      1
+    ],
+    [
+      115,
+      1,
+      33,
+      179,
+      167,
+      325,
+      41,
+      1,
+      116,
+      26,
+      3,
+      58,
+      6,
+      195,
+      379
+    ]
+  ],
+  "classes": [
+    "Normal",
+    "DDoS_TCP_SYN",
+    "DDoS_UDP",
+    "DDoS_HTTP",
+    "DDoS_ICMP",
+    "Port_Scanning",
+    "OS_Fingerprinting",
+    "Vulnerability_Scanner",
+    "MITM",
+    "XSS",
+    "SQL_Injection",
+    "Uploading",
+    "Backdoor",
+    "Password_Cracking",
+    "Ransomware"
+  ],
+  "alerts": [
+    {
+      "prediction": "OS_Fingerprinting",
+      "confidence": 0.8862514608760881,
+      "top_features": [
+        {
+          "feature": "ip.ttl.variance",
+          "impact": 0.7808914099579244
+        },
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.5104350281187703
+        },
+        {
+          "feature": "file.write_rate",
+          "impact": 0.011065530018454117
+        },
+        {
+          "feature": "outbound.conn_rate",
+          "impact": 0.007920607351582176
+        },
+        {
+          "feature": "flow.duration",
+          "impact": 0.004057321596841357
+        }
+      ],
+      "true_label": "OS_Fingerprinting"
+    },
+    {
+      "prediction": "Uploading",
+      "confidence": 0.973037667245311,
+      "top_features": [
+        {
+          "feature": "http.upload.size",
+          "impact": 0.929207618773374
+        },
+        {
+          "feature": "tcp.len",
+          "impact": 0.17877475993666325
+        },
+        {
+          "feature": "file.write_rate",
+          "impact": 0.0016165375611127963
+        },
+        {
+          "feature": "tcp.flags.syn",
+          "impact": 0.001478756356768085
+        },
+        {
+          "feature": "udp.packet_rate",
+          "impact": 0.001024913772228353
+        }
+      ],
+      "true_label": "Uploading"
+    },
+    {
+      "prediction": "Port_Scanning",
+      "confidence": 0.9851752896840942,
+      "top_features": [
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.9581778677616475
+        },
+        {
+          "feature": "tcp.connection.rst",
+          "impact": 0.09312866550379495
+        },
+        {
+          "feature": "ip.ttl.variance",
+          "impact": 0.005448134936979487
+        },
+        {
+          "feature": "payload.entropy",
+          "impact": 0.0025507267315916238
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.001517347401728486
+        }
+      ],
+      "true_label": "Port_Scanning"
+    },
+    {
+      "prediction": "XSS",
+      "confidence": 0.9519996127787643,
+      "top_features": [
+        {
+          "feature": "http.uri.special_chars",
+          "impact": 0.9341322881961022
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.1299951562500642
+        },
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.012540239539156284
+        },
+        {
+          "feature": "arp.reply_rate",
+          "impact": 0.012295529706790043
+        },
+        {
+          "feature": "login.failed_attempts",
+          "impact": 0.011685685025164538
+        }
+      ],
+      "true_label": "XSS"
+    },
+    {
+      "prediction": "DDoS_UDP",
+      "confidence": 0.8942852391552838,
+      "top_features": [
+        {
+          "feature": "udp.packet_rate",
+          "impact": 0.888266585490237
+        },
+        {
+          "feature": "flow.duration",
+          "impact": 0.10550999534258965
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.018942497828114413
+        },
+        {
+          "feature": "sql.keyword_count",
+          "impact": 0.010210928161586641
+        },
+        {
+          "feature": "file.write_rate",
+          "impact": 0.009084430041501945
+        }
+      ],
+      "true_label": "DDoS_UDP"
+    },
+    {
+      "prediction": "Ransomware",
+      "confidence": 0.7547904824006192,
+      "top_features": [
+        {
+          "feature": "file.write_rate",
+          "impact": 0.6520659898469522
+        },
+        {
+          "feature": "payload.entropy",
+          "impact": 0.5837982839583601
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.03394987625330559
+        },
+        {
+          "feature": "http.uri.special_chars",
+          "impact": 0.023959607845554953
+        },
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.022882928857476004
+        }
+      ],
+      "true_label": "Ransomware"
+    },
+    {
+      "prediction": "Password_Cracking",
+      "confidence": 0.9196304346373063,
+      "top_features": [
+        {
+          "feature": "login.failed_attempts",
+          "impact": 0.9130359400944281
+        },
+        {
+          "feature": "udp.packet_rate",
+          "impact": 0.034054755250926716
+        },
+        {
+          "feature": "tcp.len",
+          "impact": 0.01008750390575075
+        },
+        {
+          "feature": "sql.keyword_count",
+          "impact": 0.005726509248264899
+        },
+        {
+          "feature": "mqtt.msg_rate",
+          "impact": 0.000707550688151648
+        }
+      ],
+      "true_label": "Password_Cracking"
+    },
+    {
+      "prediction": "MITM",
+      "confidence": 0.9673061379505579,
+      "top_features": [
+        {
+          "feature": "arp.reply_rate",
+          "impact": 0.6857689925801915
+        },
+        {
+          "feature": "dns.qry.name.len",
+          "impact": 0.5265147847475895
+        },
+        {
+          "feature": "sql.keyword_count",
+          "impact": 0.008787625657293519
+        },
+        {
+          "feature": "mqtt.msg_rate",
+          "impact": 0.005615408502540831
+        },
+        {
+          "feature": "http.uri.special_chars",
+          "impact": 0.0020517267667453654
+        }
+      ],
+      "true_label": "MITM"
+    },
+    {
+      "prediction": "DDoS_ICMP",
+      "confidence": 0.7718046887436271,
+      "top_features": [
+        {
+          "feature": "icmp.packet_rate",
+          "impact": 0.7352340077310797
+        },
+        {
+          "feature": "ip.ttl.variance",
+          "impact": 0.04059719116330218
+        },
+        {
+          "feature": "sql.keyword_count",
+          "impact": 0.03735110576753331
+        },
+        {
+          "feature": "modbus.rare_func_code",
+          "impact": 0.035677716404152515
+        },
+        {
+          "feature": "http.upload.size",
+          "impact": 0.019094441440778653
+        }
+      ],
+      "true_label": "DDoS_ICMP"
+    },
+    {
+      "prediction": "Vulnerability_Scanner",
+      "confidence": 0.47008484727822886,
+      "top_features": [
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.3790689580926367
+        },
+        {
+          "feature": "http.uri.special_chars",
+          "impact": 0.3022986547007981
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.19448058040979815
+        },
+        {
+          "feature": "payload.entropy",
+          "impact": 0.07307833618190618
+        },
+        {
+          "feature": "flow.duration",
+          "impact": 0.06382252900608731
+        }
+      ],
+      "true_label": "Vulnerability_Scanner"
+    },
+    {
+      "prediction": "DDoS_TCP_SYN",
+      "confidence": 0.8676435523970681,
+      "top_features": [
+        {
+          "feature": "tcp.flags.syn",
+          "impact": 0.8559718340592829
+        },
+        {
+          "feature": "tcp.connection.rst",
+          "impact": 0.47967482317081006
+        },
+        {
+          "feature": "outbound.conn_rate",
+          "impact": 0.028475238061461017
+        },
+        {
+          "feature": "file.write_rate",
+          "impact": 0.024497536226138372
+        },
+        {
+          "feature": "modbus.rare_func_code",
+          "impact": 0.014611861854485042
+        }
+      ],
+      "true_label": "DDoS_TCP_SYN"
+    },
+    {
+      "prediction": "SQL_Injection",
+      "confidence": 0.9980375659606793,
+      "top_features": [
+        {
+          "feature": "sql.keyword_count",
+          "impact": 0.9865633559791471
+        },
+        {
+          "feature": "http.uri.special_chars",
+          "impact": 0.0033060315882974534
+        },
+        {
+          "feature": "flow.duration",
+          "impact": 0.0007314093055079685
+        },
+        {
+          "feature": "tcp.len",
+          "impact": 0.0006607990735089109
+        },
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.0005160030769230106
+        }
+      ],
+      "true_label": "SQL_Injection"
+    },
+    {
+      "prediction": "Backdoor",
+      "confidence": 0.9684866717348908,
+      "top_features": [
+        {
+          "feature": "outbound.conn_rate",
+          "impact": 0.805610142266749
+        },
+        {
+          "feature": "payload.entropy",
+          "impact": 0.6075188586426852
+        },
+        {
+          "feature": "udp.packet_rate",
+          "impact": 0.006052129484651392
+        },
+        {
+          "feature": "tcp.dstport.unique",
+          "impact": 0.005943901678632346
+        },
+        {
+          "feature": "http.request.len",
+          "impact": 0.004163234594549481
+        }
+      ],
+      "true_label": "Backdoor"
+    },
+    {
+      "prediction": "DDoS_HTTP",
+      "confidence": 0.9448448939276232,
+      "top_features": [
+        {
+          "feature": "http.request.len",
+          "impact": 0.6713095025212962
+        },
+        {
+          "feature": "tcp.len",
+          "impact": 0.359117668572944
+        },
+        {
+          "feature": "flow.duration",
+          "impact": 0.17365056481680174
+        },
+        {
+          "feature": "udp.packet_rate",
+          "impact": 0.01966562564191021
+        },
+        {
+          "feature": "login.failed_attempts",
+          "impact": 0.018302117317627542
+        }
+      ],
+      "true_label": "DDoS_HTTP"
+    }
+  ],
+  "config": {
+    "rounds": 30,
+    "local_epochs": 2,
+    "clients": 5,
+    "alpha": 0.3,
+    "dp": {
+      "clip": 1.0,
+      "sigma": 0.01
+    }
+  }
+}
